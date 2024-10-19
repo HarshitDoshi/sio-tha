@@ -1,0 +1,73 @@
+:root {
+  color-scheme: light dark;
+  --base-font-size: 16px;
+}
+
+html {
+  min-width: 100dvw;
+  width: 100dvw;
+  max-width: 100dvw;
+  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  font-size: var(--base-font-size);
+}
+
+body {
+  min-width: 100dvw;
+  width: 100dvw;
+  max-width: 100dvw;
+  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0%;
+  padding: 0%;
+}
+
+#root {
+  min-width: 100dvw;
+  width: 100dvw;
+  max-width: 100dvw;
+  min-height: 100dvh;
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: 0%;
+  margin: 0%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light dark;
+    --base-font-size: 16px;
+  }
+
+  html {
+    min-width: 100dvw;
+    width: 100dvw;
+    max-width: 100dvw;
+    min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
+    font-size: var(--base-font-size);
+  }
+
+  body {
+    min-width: 100dvw;
+    width: 100dvw;
+    max-width: 100dvw;
+    min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  #root {
+    min-width: 100dvw;
+    width: 100dvw;
+    max-width: 100dvw;
+    min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
+  }
+}
