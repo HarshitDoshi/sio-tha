@@ -3,6 +3,6 @@ services:
     container_name: "WebClient"
     image: harshitdoshi/sio-tha:webclient
     ports:
-      - 80:80
+      - 8080:80
     depends_on:
       - application_programming_interfaces

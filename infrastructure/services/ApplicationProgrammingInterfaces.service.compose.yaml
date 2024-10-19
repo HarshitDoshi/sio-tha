@@ -1,7 +1,7 @@
 services:
   application_programming_interfaces:
     container_name: "APIs"
-    image: harshitdoshi/sio-tha:submission
+    image: harshitdoshi/sio-tha:webserver
     expose:
       - 8000
     ports:
