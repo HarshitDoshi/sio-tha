@@ -1,4 +1,5 @@
 FROM python:3.12
+LABEL org.opencontainers.image.source=https://github.com/HarshitDoshi/sio-tha
 WORKDIR /application
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir --upgrade setuptools
