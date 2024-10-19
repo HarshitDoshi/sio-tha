@@ -4,4 +4,5 @@ include:
       - ./services/DatabaseClient.service.compose.yaml
       - ./services/ApplicationProgrammingInterfaces.service.compose.yaml
       - ./services/WebServer.service.compose.yaml
+      - ./services/WebClient.service.compose.yaml
     project_directory: .
