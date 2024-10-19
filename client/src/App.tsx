@@ -4,6 +4,7 @@ import { Shell } from './components';
 import { useCreateSpace } from './utilities/services';
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { RocketLaunch } from '@mui/icons-material';
 
 function App() {
   const location = useLocation();
@@ -94,14 +95,14 @@ function App() {
               <Box
                 sx={{
                   height: '100%',
-                  paddingX: '4rem',
+                  paddingX: '10rem',
                   paddingY: '8rem',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
                   gap: '1rem',
-                  background: 'radial-gradient(circle, rgba(0, 115, 230, 0.4) 0%, rgba(0, 115, 230, 0) 60%)',
+                  background: 'radial-gradient(circle, rgba(99, 91, 215, 0.4) 0%, rgba(99, 91, 215, 0) 60%)',
                   borderRadius: '50%',
                 }}
               >
@@ -129,6 +130,8 @@ function App() {
                     createSpaceMutation.isPending
                     || (haveSpaceCode && !spaceCode)
                   }
+                  startIcon={<RocketLaunch />}
+                  endIcon={<RocketLaunch sx={{ color: 'transparent' }} />}
                   variant={'contained'}
                   size={'large'}
                   onClick={handleCTAClick}
