@@ -5,20 +5,19 @@ import { SubmitHandler } from "react-hook-form";
 import { ITransactionRequest } from "../../utilities/types";
 
 const CreateForm = ({ spaceId, formControl, formErrors, formHandleSubmit, transactionTypes, createTransactionTypeMutation, createTransactionMutation, toggleCreateTransactionDrawer }: ICreateForm) => {
+  const closeCreateTransactionDrawer = toggleCreateTransactionDrawer(false);
   const onSubmit: SubmitHandler<ITransactionRequest> = data => {
     createTransactionMutation.mutate({
       type: data.type,
       amount: data.amount,
       occurred_datetime: data.occurred_datetime,
     });
+    closeCreateTransactionDrawer();
   };
   return (
     <Box
       component={'form'}
-      onSubmit={() => {
-        formHandleSubmit(onSubmit);
-        toggleCreateTransactionDrawer(false);
-      }}
+      onSubmit={formHandleSubmit(onSubmit)}
       style={{
         minWidth: '100%',
         width: '100%',

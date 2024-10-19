@@ -17,6 +17,11 @@ const CreateFooter = ({ spaceId }: ICreateFooter) => {
   const [amountValue, setAmountValue] = useState<number | undefined>(undefined);
   const [occurredDatetimeValue, setOccurredDatetimeValue] = useState<Date | undefined>(undefined);
   useEffect(() => {
+    console.log('CreateFooter', {
+      typeValue,
+      amountValue,
+      occurredDatetimeValue,
+    });
     setTypeValue(formWatch('type'));
     setAmountValue(formWatch('amount'));
     setOccurredDatetimeValue(formWatch('occurred_datetime'));
@@ -37,9 +42,9 @@ const CreateFooter = ({ spaceId }: ICreateFooter) => {
         variant={'contained'}
         disabled={
           createTransactionMutation.isPending
-          || !typeValue
-          || !amountValue
-          || !occurredDatetimeValue
+          // || !typeValue
+          // || !amountValue
+          // || !occurredDatetimeValue
         }
         size={'large'}
         type={'submit'}

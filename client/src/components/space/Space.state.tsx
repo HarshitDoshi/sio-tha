@@ -17,6 +17,7 @@ const useSpaceState = ({ spaceId }: IUseSpaceState) => {
   } | null>(null);
 
   const toggleCreateTransactionDrawer = (newOpen: boolean) => () => {
+    console.log('toggleCreateTransactionDrawer', newOpen);
     setOpenCreateTransaction(newOpen);
   };
 
