@@ -28,7 +28,7 @@ const TypeField = ({ formControl, transactionTypes, createTransactionTypeMutatio
           }
           isOptionEqualToValue={(option, value) => option.id === value.id}
           value={transactionTypes?.find((transactionType) => transactionType.id === field.value) || null}
-          onChange={(event, newValue) => {
+          onChange={(_event, newValue) => {
             if (newValue && typeof newValue === 'object' && (newValue as ITransactionType).value) {
               if (!transactionTypes?.includes(newValue as ITransactionType)) {
                 createTransactionTypeMutation.mutate(
