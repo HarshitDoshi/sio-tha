@@ -1,8 +1,10 @@
 services:
   web_client:
     container_name: "WebClient"
-    image: harshitdoshi/sio-tha:siowebclient
+    image: ghcr.io/harshitdoshi/sio-tha/siowebclient:siowebclient
     ports:
       - 8080:80
+    environment:
+      - NODE_ENV=production
     depends_on:
       - application_programming_interfaces
