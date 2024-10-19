@@ -1,0 +1,20 @@
+services:
+  database:
+    container_name: "Database"
+    image: postgres:17
+    volumes:
+      - database_volume:/var/lib/postgresql/data/
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    restart: always
+    environment:
+      POSTGRES_USER: "staplesuperuser"
+      POSTGRES_PASSWORD: "staplesuperusersecret"
+      POSTGRES_DB: "staple"
+      POSTGRES_HOST_AUTH_METHOD: "scram-sha-256"
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256"
+
+volumes:
+  database_volume:

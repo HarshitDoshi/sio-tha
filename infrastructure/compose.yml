@@ -1,0 +1,7 @@
+include:
+  - path:
+      - ./services/Database.service.compose.yaml
+      - ./services/DatabaseClient.service.compose.yaml
+      # - ./services/ApplicationProgrammingInterfaces.service.compose.yaml
+      - ./services/WebServer.service.compose.yaml
+    project_directory: .

@@ -1,0 +1,17 @@
+services:
+  application_programming_interfaces:
+    container_name: "APIs"
+    image: postgrest/postgrest
+    expose:
+      - 3000
+    ports:
+      - 8000:3000
+    environment:
+      PGRST_DB_PRE_CONFIG: "authx.pre_configuration"
+      PGRST_DB_URI: postgres://shunyaeksuperuser:shunyaeksuperusersecret@database:5432/shunyaek
+      PGRST_DB_SCHEMAS: "application_programming_interfaces"
+      PGRST_DB_ANON_ROLE: "shunyaekanonymoususer"
+      PGRST_OPENAPI_SERVER_PROXY_URI: http://127.0.0.1:8000
+    depends_on:
+      - database
+      - identity_access_management
