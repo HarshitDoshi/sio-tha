@@ -1,7 +1,7 @@
 services:
   web_client:
     container_name: "WebClient"
-    image: harshitdoshi/sio-tha:webclient
+    image: harshitdoshi/sio-tha:siowebclient
     ports:
       - 8080:80
     depends_on:
