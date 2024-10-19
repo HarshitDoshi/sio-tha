@@ -17,20 +17,10 @@ const CreateFooter = ({ spaceId }: ICreateFooter) => {
   const [amountValue, setAmountValue] = useState<number | undefined>(undefined);
   const [occurredDatetimeValue, setOccurredDatetimeValue] = useState<Date | undefined>(undefined);
   useEffect(() => {
-    console.log('CreateFooter', {
-      typeValue,
-      amountValue,
-      occurredDatetimeValue,
-    });
     setTypeValue(formWatch('type'));
     setAmountValue(formWatch('amount'));
     setOccurredDatetimeValue(formWatch('occurred_datetime'));
-    console.log('CreateFooter', {
-      type: formWatch('type'),
-      amount: formWatch('amount'),
-      occurred_datetime: formWatch('occurred_datetime'),
-    });
-  }, [formWatch]);
+  }, [amountValue, formWatch, occurredDatetimeValue, typeValue]);
   return (
     <Box
       sx={{
