@@ -1,0 +1,9 @@
+FROM python:3.12
+WORKDIR /application
+RUN pip install --no-cache-dir --upgrade pip
+RUN pip install --no-cache-dir --upgrade setuptools
+RUN pip install --no-cache-dir --upgrade wheel
+RUN pip install --no-cache-dir --upgrade poetry
+COPY . /application
+RUN poetry install --no-root
+CMD ["python", "-m", "poetry", "run", "python", "-m", "fastapi", "run", "main.py", "--port", "8000"]

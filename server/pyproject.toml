@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "server"
+version = "0.1.0"
+description = ""
+authors = ["HarshitDoshi <5103046+HarshitDoshi@users.noreply.github.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["standard"], version = "^0.115.2"}
+pydantic = {extras = ["email", "timezone"], version = "^2.9.2"}
+sqlalchemy = "^2.0.35"
+psycopg = {extras = ["binary"], version = "^3.2.3"}
+greenlet = "^3.1.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
