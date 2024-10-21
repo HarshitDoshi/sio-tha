@@ -8,16 +8,13 @@ import { RocketLaunch } from '@mui/icons-material';
 
 function App() {
   const location = useLocation();
-  const [showHeaderAndFooter, setShowHeaderAndFooter] = useState(false);
   const [showLandingPage, setShowLandingPage] = useState<boolean>(false);
   const [haveSpaceCode, setHaveSpaceCode] = useState<boolean>(false);
   const [spaceCode, setSpaceCode] = useState<string>("");
   useEffect(() => {
     if (location.pathname === "/") {
-      setShowHeaderAndFooter(true);
       setShowLandingPage(true);
     } else {
-      setShowHeaderAndFooter(true);
       setShowLandingPage(false);
     }
   }, [location.pathname]);
@@ -50,9 +47,7 @@ function App() {
   };
 
   return (
-    <Shell
-      showHeaderAndFooter={showHeaderAndFooter}
-    >
+    <Shell>
       {
         showLandingPage && (
           <Grid

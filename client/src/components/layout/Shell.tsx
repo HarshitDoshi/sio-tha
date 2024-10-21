@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import Header from "./Header";
 import { IShellProperties } from "./types";
 
-const Shell = ({ showHeaderAndFooter, children }: IShellProperties) => {
+const Shell = ({ children }: IShellProperties) => {
   return (
     <Box
       sx={{
@@ -18,7 +18,7 @@ const Shell = ({ showHeaderAndFooter, children }: IShellProperties) => {
         maxWidth: '100%',
       }}
     >
-      {showHeaderAndFooter && <Header />}
+      <Header />
       {children}
     </Box>
   );

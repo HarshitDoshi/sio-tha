@@ -1,5 +1,4 @@
 type IShellProperties = {
-  showHeaderAndFooter: boolean;
   children?: React.ReactNode | undefined;
 };
 
