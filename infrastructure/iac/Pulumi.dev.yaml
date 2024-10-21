@@ -1,0 +1,7 @@
+config:
+  aws:region: ap-south-1
+  iac:desiredClusterSize: "3"
+  iac:eksNodeInstanceType: t3.2xlarge
+  iac:maxClusterSize: "3"
+  iac:minClusterSize: "2"
+  iac:vpcNetworkCidr: 10.0.0.0/16
