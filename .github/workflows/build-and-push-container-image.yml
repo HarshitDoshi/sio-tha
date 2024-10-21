@@ -34,7 +34,6 @@ jobs:
           tags: ghcr.io/harshitdoshi/sio-tha/siowebclient:siowebclient,ghcr.io/harshitdoshi/sio-tha/siowebclient:latest
           platforms: linux/amd64
           push: true
-          build-contexts: ./client
           context: ./server
 
       - name: Build & Push Web-Server (APIs) Image
@@ -44,5 +43,4 @@ jobs:
           tags: ghcr.io/harshitdoshi/sio-tha/siowebserver:siowebserver,ghcr.io/harshitdoshi/sio-tha/siowebserver:latest
           platforms: linux/amd64
           push: true
-          build-contexts: ./server
           context: ./server
