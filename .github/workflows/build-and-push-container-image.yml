@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./server
-          file: Containerfile
+          file: server/Containerfile
           tags: ghcr.io/harshitdoshi/sio-tha/siowebserver:siowebserver,ghcr.io/harshitdoshi/sio-tha/siowebserver:latest
           platforms: linux/amd64
           push: true
