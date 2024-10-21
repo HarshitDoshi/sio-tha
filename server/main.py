@@ -26,8 +26,8 @@ async def lifespan(app: Application):
 application = Application(lifespan=lifespan)
 
 origins = [
-    "http://localhost:5173",
-    "http://localhost:8080",
+    "http://web-client.localhost/",
+    "*",
 ]
 
 application.add_middleware(

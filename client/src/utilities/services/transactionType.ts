@@ -9,7 +9,7 @@ export const useTransactionTypes = () => {
   return useQuery<ITransactionType[], AxiosError>({
     queryKey: [TRANSACTION_TYPE_QUERY_KEY],
     queryFn: async () => {
-      const response = await API.get<ITransactionType[]>('/transaction_types');
+      const response = await API.get<ITransactionType[]>('/transaction_types/');
       return response.data;
     },
   });
@@ -20,7 +20,7 @@ export const useCreateTransactionType = () => {
 
   return useMutation<ITransactionType, AxiosError, ITransactionTypeRequest>({
     mutationFn: async (newTransactionType: ITransactionTypeRequest) => {
-      const response = await API.post<ITransactionType>('/transaction_types', newTransactionType);
+      const response = await API.post<ITransactionType>('/transaction_types/', newTransactionType);
       return response.data;
     },
     onSuccess: () => {
