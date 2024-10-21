@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  servers.json: |-
+    {
+      "Servers": {
+        "1": {
+          "Name": "staple database",
+          "Group": "staple",
+          "Port": 5432,
+          "Username": "staplesuperuser",
+          "Host": "database",
+          "SSLMode": "prefer",
+          "MaintenanceDB": "postgres"
+        }
+      }
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    use-subpath: "true"
+  labels:
+    io.kompose.service: database-client
+  name: database-client-cm0

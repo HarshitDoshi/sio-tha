@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.34.0 (HEAD)
+  labels:
+    io.kompose.service: database-client
+  name: database-client
+spec:
+  type: ClusterIP
+  ports:
+    - name: "5050"
+      port: 5050
+      targetPort: 80
+  selector:
+    io.kompose.service: database-client
