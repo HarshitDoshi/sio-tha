@@ -1,8 +1,10 @@
+#!/usr/bin/python
+
 from contextlib import asynccontextmanager
 from fastapi import FastAPI as Application, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import select
-from sqlalchemy.orm import selectinload, joinedload
+from sqlalchemy.orm import joinedload
 from sqlalchemy.ext.asyncio.session import AsyncSession as Session
 from sqlalchemy.exc import SQLAlchemyError
 from typing import List
