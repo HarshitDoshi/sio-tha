@@ -1,7 +1,7 @@
 services:
   web_client:
     container_name: "WebClient"
-    image: ghcr.io/harshitdoshi/sio-tha/siowebclient:siowebclient
+    image: ghcr.io/harshitdoshi/sio-tha/siowebclient:latest
     ports:
       - 8080:80
     environment:

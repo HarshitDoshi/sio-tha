@@ -1,7 +1,7 @@
 services:
   application_programming_interfaces:
     container_name: "APIs"
-    image: ghcr.io/harshitdoshi/sio-tha/siowebserver:siowebserver
+    image: ghcr.io/harshitdoshi/sio-tha/siowebserver:latest
     expose:
       - 8000
     ports:

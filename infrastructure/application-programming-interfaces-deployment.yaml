@@ -38,7 +38,8 @@ spec:
               value: postgresql
             - name: DATABASE_USER
               value: staplesuperuser
-          image: ghcr.io/harshitdoshi/sio-tha/siowebserver:siowebserver
+          image: ghcr.io/harshitdoshi/sio-tha/siowebserver:latest
+          imagePullPolicy: "Always"
           name: apis
           ports:
             - containerPort: 8000
