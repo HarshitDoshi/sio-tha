@@ -22,7 +22,7 @@ jobs:
       - name: Set-Up Docker BuildX
         uses: docker/setup-buildx-action@v3
         with:
-          platforms: linux/amd64
+          platforms: linux/arm64
 
       - name: Sign-In To GitHub Container Registry (GHCR.io)
         run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -33,7 +33,7 @@ jobs:
           context: ./client
           file: client/Containerfile
           tags: ghcr.io/harshitdoshi/sio-tha/siowebclient:siowebclient,ghcr.io/harshitdoshi/sio-tha/siowebclient:latest
-          platforms: linux/amd64
+          platforms: linux/arm64
           push: true
 
       - name: Build & Push Web-Server (APIs) Image
@@ -42,5 +42,5 @@ jobs:
           context: ./server
           file: server/Containerfile
           tags: ghcr.io/harshitdoshi/sio-tha/siowebserver:siowebserver,ghcr.io/harshitdoshi/sio-tha/siowebserver:latest
-          platforms: linux/amd64
+          platforms: linux/arm64
           push: true
