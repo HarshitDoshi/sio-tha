@@ -35,16 +35,16 @@ const SpaceComponent = ({ spaceId, state }: ISpaceComponent) => {
         openConfirmForgetSpaceDialog={openConfirmForgetSpaceDialog}
       />
       <CreateTransactionDrawer
-        spaceId={spaceId || ""}
+        spaceId={spaceId}
         openCreateTransaction={openCreateTransaction}
         toggleCreateTransactionDrawer={toggleCreateTransactionDrawer}
       />
       <VisualizeTransactionsDrawer
-        spaceId={spaceId || ""}
+        spaceId={spaceId}
         openVisualizeTransactions={openVisualizeTransactions}
         toggleVisualizeTransactionsDrawer={toggleVisualizeTransactionsDrawer}
       />
-      <TransactionsTable transactions={transactions} />
+      <TransactionsTable spaceId={spaceId} transactions={transactions} />
       <ConfirmForgetSpaceDialog
         copySpaceIdLog={copySpaceIdLog}
         openConfirmForgetSpaceDialog={openConfirmForgetSpaceDialog}

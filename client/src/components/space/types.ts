@@ -1,4 +1,4 @@
-import { ITransaction, ITypeWithSpaceId } from "../../utilities/types";
+import { ISpace, ITransaction, ITypeWithSpaceId } from "../../utilities/types";
 import useSpaceState from "./Space.state";
 
 type IUseSpaceState = ITypeWithSpaceId;
@@ -25,6 +25,7 @@ type IConfirmForgetSpaceDialog = {
 };
 
 type ITransactionsTable = {
+  spaceId: ISpace['id'];
   transactions: ITransaction[] | undefined;
 };
 

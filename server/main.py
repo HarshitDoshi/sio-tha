@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 from contextlib import asynccontextmanager
-from fastapi import FastAPI as Application, Depends, HTTPException
+from fastapi import FastAPI as Application, Depends, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import select
 from sqlalchemy.orm import joinedload
@@ -123,7 +123,7 @@ async def create_transaction(
     return TransactionResponse.model_validate(new_transaction)
 
 
-@application.delete("/{space_id}/transactions/{transaction_id}/", response_model=TransactionResponse)
+@application.delete("/{space_id}/transactions/{transaction_id}/")
 async def delete_transaction(
     space_id: str,
     transaction_id: str,
@@ -132,8 +132,11 @@ async def delete_transaction(
     transaction_to_be_deleted = (
         await session.scalars(
             select(Transaction)
+                .options(
+                        joinedload(Transaction.type)
+                    )
                 .where(
-                    Transaction.id == transaction_id and Transaction.space_id == space_id
+                    Transaction.id == transaction_id, Transaction.space_id == space_id
                 )
         )
     ).one_or_none()
@@ -142,11 +145,10 @@ async def delete_transaction(
     try:
         await session.delete(transaction_to_be_deleted)
         await session.commit()
-        await session.refresh(transaction_to_be_deleted)
     except SQLAlchemyError as error:
         await session.rollback()
         raise HTTPException(status_code=500, detail=str(error))
-    return transaction_to_be_deleted
+    return Response(status_code=200)
 
     
 @application.get("/{space_id}/transactions/", response_model=List[TransactionResponse])
